@@ -1,0 +1,72 @@
+<div class="container">
+  <h1 style="color: red">Working with form in Angular - Phan Huu Tri demostration</h1>
+  <hr>
+
+  <form class="form-ho" [formGroup]='registerForm' (ngSubmit)='save()' role="form">
+    <legend>Account Registion</legend>
+
+    <div class="form-group">
+      <label for="">Username</label>
+      <input type="text" class="form-control" id="" formControlName='userName' placeholder="Input Username">
+    </div>
+
+    <div class="form-group">
+      <label for="">First name</label>
+      <input type="text" class="form-control" id="" formControlName='firstName' placeholder="Input first name">
+    </div>
+
+    <div class="form-group">
+      <label for="">Last name</label>
+      <input type="text" class="form-control" id="" formControlName='lastName' placeholder="Input last name">
+    </div>
+
+    <div class="form-group">
+      <label for="">Gender</label>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" value="male" formControlName='gender'>
+        <label class="form-check-label" for="exampleRadios1">Male</label>
+      </div>
+      <div class="form-check">
+          <input type="radio" class="form-check-input" value="female" formControlName='gender'>
+          <label class="form-check-label" for="exampleRadios1">Female</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="">Password</label>
+      <input type="password" class="form-control" id="" formControlName='password' placeholder="Input password">
+    </div>
+
+    <div class="form-group">
+      <label for="">Certificate</label>
+      <div *ngFor="let cert of certificate">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName='certificate'>
+          <label class="form-check-label" for="exampleRadios1">
+            {{cert.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="" formControlName='status'>
+          Status
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="">Role</label>
+      <select name="" id="">
+        <option *ngFor='let role of roles'>{{role.name}}</option>
+      </select>
+    </div>
+
+    <input type="hidden" formControlName="id">
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+
+</div>

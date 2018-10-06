@@ -1,0 +1,48 @@
+
+<div class="container">
+  <h2>Oneway binding</h2>
+  
+  <form action="" method="POST" role="form">
+    <legend>User information</legend>
+    <div class="form-group">
+      <label for="">{{this.name}}</label>
+      <input type="text" class="form-control" id="" placeholder="Input field" [ngModel]="name" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="">{{this.user.firstName}}</label>
+        <input type="text" class="form-control" id="" placeholder="Input field" [(ngModel)]="user.firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+        <label for="">{{this.user.lastName}}</label>
+        <input type="text" class="form-control" id="" placeholder="Input field" [(ngModel)]="user.lastName" name="lastName">
+    </div>
+
+    <div class="form-group">
+        <label for="">{{this.user.email}}</label>
+        <input type="email" class="form-control" id="" placeholder="Input field" [(ngModel)]="user.email" name="email">
+    </div>
+
+    <div class="form-group">
+        <label for="">{{this.user.dob}}</label>
+        <input type="date" class="form-control" id="" placeholder="Input field" [(ngModel)]="user.dob" name="dob">
+    </div>
+  </form>
+  
+  <hr>
+  
+  <form class="form-inline" role="form">
+  
+    <div class="form-group">
+      <label class="sr-only" for="">Salary</label>
+      <input type="email" class="form-control" id="" placeholder="Input field" [(ngModel)]="s">
+    </div>
+
+    <div class="form-group">
+      <label class="sr-only" for="">Month</label>
+      <input type="number" class="form-control" id="" placeholder="Input month number">
+    </div>
+    <p>{{this.totolSalary}}</p>
+  </form>
+  
+</div>
