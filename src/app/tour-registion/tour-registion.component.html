@@ -2,12 +2,45 @@
   <h1 class="text-center">Đăng ký Tour Du lịch</h1>
   <hr>
 
-  <form class="form-horizontal" [formGroup]='registerForm' role="form" (ngSubmit)= 'tourSubmit()'>
+  <form class="form" [formGroup]='registerForm' role="form" (ngSubmit)='tourSubmit()'>
     <div class="form-group">
-      <label for="">Tên Tour</label>
-      <input type="text" class="form-control" id="" formControlName='tour.name' placeholder="Input last name">
+      <label for="tourname">Tên Tour:</label>
+      <select class="form-control" id="tourname" formControlName="tourname">
+        <option *ngFor='let tourName of tourList'   [value]="tourName.id">{{tourName.name}}</option>
+      </select>
     </div>
 
+    <div class="form-group">
+      <label for="tourBeginDate">Ngày khởi hành:</label>
+      <input type="date" class="form-control" id="tourBeginDate" [value]="beginDate" formControlName='beginDate'>
+    </div>
+
+    <div class="form-group">
+      <label for="tourMovingMethod">Phương tiện di chuyển:</label>
+      <select class="form-control" id="tourMovingMethod" formControlName="movingMethod">
+        <option *ngFor='let method of movingMethodList'   [value]="method.id">{{method.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tourRegisteeAmount">Số lượng đăng ký:</label>
+      <input type="number" class="form-control" formControlName="registeeAmount" id="tourRegisteeAmount">
+    </div>
+
+    <div class="form-group">
+      <label for="tourCustomerName">Tên khách hàng:</label>
+      <input type="text" class="form-control" formControlName="customerName" id="tourCustomerName">
+    </div>
+
+    <div class="form-group">
+      <label for="tourContactAddress">Địa chỉ liên hệ:</label>
+      <input type="text" class="form-control" formControlName="contactAddress" id="tourContactAddress">
+    </div>
+
+    <div class="form-group">
+      <label for="tourContactPhone">Điện thoại liên hệ:</label>
+      <input type="text" class="form-control" formControlName="contactPhone" id="tourContactPhone">
+    </div>
 
     <div class="form-group">
       <div class="col-sm-10 col-sm-offset-2">
