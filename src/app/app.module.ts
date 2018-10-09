@@ -8,6 +8,7 @@ import { Demo2Component } from './demo2/demo2.component';
 import { DemoDataBindingComponent } from './demo-data-binding/demo-data-binding.component';
 import { FormDemostrationComponent } from './form-demostration/form-demostration.component';
 import { TourRegistionComponent } from './tour-registion/tour-registion.component';
+import { SeviceDemoComponent } from './sevice-demo/sevice-demo.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TourRegistionComponent } from './tour-registion/tour-registion.componen
     Demo2Component,
     DemoDataBindingComponent,
     FormDemostrationComponent,
-    TourRegistionComponent
+    TourRegistionComponent,
+    SeviceDemoComponent
   ],
   imports: [
     BrowserModule,
