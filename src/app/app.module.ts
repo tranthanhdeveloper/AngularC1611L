@@ -9,6 +9,9 @@ import { DemoDataBindingComponent } from './demo-data-binding/demo-data-binding.
 import { FormDemostrationComponent } from './form-demostration/form-demostration.component';
 import { TourRegistionComponent } from './tour-registion/tour-registion.component';
 import { SeviceDemoComponent } from './sevice-demo/sevice-demo.component';
+import {Service1, Service2} from './services/service';
+import { ProductService } from './services/product.service';
+import {HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import { SeviceDemoComponent } from './sevice-demo/sevice-demo.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [TourRegistionComponent]
+  providers: [Service1, Service2, ProductService],
+  bootstrap: [SeviceDemoComponent]
 })
 export class AppModule { }

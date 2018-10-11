@@ -1,3 +1,66 @@
-<p>
-  sevice-demo works!
-</p>
+<div class="container">
+<h1 class="text-center">Working with Service - Angular</h1>
+<hr>
+<div>
+    <p>Result1: {{result1}}</p>
+    <p>Result2: {{result2}}</p>
+    <p>Result3: {{result3}}</p>
+    <hr>
+    <!-- 
+    <h3>Product got from Product Service</h3>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>{{product.id}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{product.name}}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{product.description}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{product.price}}</td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>{{product.quantity}}</td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td><img width="100%" height="100%" src="{{product.photo}}" alt="Product image"></td>
+        </tr>
+    </table> -->
+    <hr>
+    <div class="panel panel-default">
+        <div class="panel-header">
+           Search product
+           <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" placeholder="Enter product name" (keyup.enter)="searchProductByName($event)">
+        </div>
+    </div>
+    
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>                
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productList">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+</div>
+</div>
