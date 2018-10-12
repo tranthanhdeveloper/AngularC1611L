@@ -11,6 +11,7 @@ export class ProductService {
   constructor(private http : HttpClient) {}
 
   findAllProduct():Observable<Product[]>{
+    console.log(this.http.get<Product[]>(this.apiUrl).subscribe());
     return this.http.get<Product[]>(this.apiUrl);
   }
 
